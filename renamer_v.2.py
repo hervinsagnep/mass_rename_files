@@ -1,7 +1,9 @@
 #SCANNER RENAMER
 import os
 def bat_or_oth(kind):
+
     if kind == "BATCH":
+        # BATCHES FUNCTIONS
         def batch_number(number):
             if number == 1000:
                 os.chdir('/Users/hervinsagnep/Desktop/1')
@@ -30,7 +32,9 @@ def bat_or_oth(kind):
             else:
                 print("INVALID BATCH TYPE")
         batch_number(int(input("BATCH TYPE: 1000,2000,6000,9000")))
+
     elif kind == "OTHER":
+        # "OTHER FUNCTIONS"
         def other_type(type):
             if type == "NDA":
                 os.chdir('/Users/hervinsagnep/Desktop/1')
@@ -104,5 +108,14 @@ os.chdir('/Users/hervinsagnep/Desktop/1')
 for files in os.listdir():
     prefix_rem = (files[3:])
     os.rename(files,prefix_rem)
+    
+#MONTH INPUT
+
+month = input("Month")
+
+#BUG
+
+USER INPUT FOR MONTH WILL ASK FOR INPUT OF EACH INDIVIDUAL FILE, NEED INPUT TO FORMAT WITH THE SINGLE INPUT INTEGER
+
 
 """
