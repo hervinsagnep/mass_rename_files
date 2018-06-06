@@ -1,6 +1,2 @@
 # renamer_project
-
-CONCERNS:
-
-NEED INPUT TO BE CHANGED TO ALL CAPS
-COMPUTER MAY NOT ACCEPT ALL FILES TO BE NAMED THE SAME THING
+Tryna make a PDF renamer because im too lazy to manually rename each file
