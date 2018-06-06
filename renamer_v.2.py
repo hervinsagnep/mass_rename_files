@@ -29,7 +29,7 @@ def bat_or_oth(kind):
                     os.rename(files, nine_thousand_format)
             else:
                 print("INVALID BATCH TYPE")
-        batch_number(int(input("BATCH TYPE")))
+        batch_number(int(input("BATCH TYPE: 1000,2000,6000,9000")))
     elif kind == "OTHER":
         def other_type(type):
             if type == "NDA":
@@ -41,7 +41,7 @@ def bat_or_oth(kind):
             elif type == "POUNDAGE REPORT":
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
-                    poundage_input = (input("Batch Number"))
+                    poundage_input = (input("BATCH NUMBER"))
                     poundage_format = ('{}'.format(poundage_input))
                     os.rename(files, poundage_format)
             elif type == "POSTING REPORT":
@@ -56,6 +56,8 @@ def bat_or_oth(kind):
             else:
                 print("INVALID TYPE")
         other_type(input("OTHER TYPE: NDA, POUNDAGE REPORT, POSTING REPORT"))
+    else:
+        print ("PLEASE INPUT VALID KIND")
 bat_or_oth(input("BATCH OR OTHER?"))
 
 
@@ -65,5 +67,24 @@ os.chdir('/Users/hervinsagnep/Desktop/1') <---- Place holder for scanned file lo
 TO CHANGE FORMAT:
 
 CHANGE PRINT STATEMENTS AT EACH FUNCTION TO - os.rename(files,variable name)
+
+CONCERN:
+
+COMPUTER WILL NOT ALLOW FILES TO ALL BE RENAMED TO THE TEMPLATE
+
+FIXES:
+
+ASSIGN FILES TO BE RENAMED AS NUMBER AND WILL BE MERGED WITH THE FORMATING
+
+EX.
+FUNCTION TO RENAME ALL FILES WITH DIGITS STARTING FROM 00. COMBINE THE DIGITS WITH THE FORMAT
+00 NDA MMDDYYYY
+01 NDA MMDDYYYY
+
+THE PREFIX DIGITS MUST BE REMOVED MANUALLY
+
+LIST OF NUMBERS:
+
+[0:101] 
 
 """
