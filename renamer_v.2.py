@@ -1,3 +1,5 @@
+#PDF SCANNER RENAMER
+#=====================INPUT MUST BE ALL CAPS==========================
 import os
 def bat_or_oth(kind):
 
@@ -78,6 +80,8 @@ bat_or_oth(input("BATCH OR OTHER?"))
 
 
 """
+NOTES:
+
 os.chdir('/Users/hervinsagnep/Desktop/1') <---- Place holder for scanned file location at work
 
 TO CHANGE FORMAT:
