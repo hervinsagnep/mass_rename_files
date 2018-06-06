@@ -8,30 +8,34 @@ def bat_or_oth(kind):
             if number == 1000:
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     one_thousand_template = "20YYMMDD-10XX"
                     pdf = ".pdf"
-                    one_thousand_format = ('{}{}'.format(one_thousand_template,pdf))
+                    one_thousand_format = ('{} {}{}'.format(prefix_num,one_thousand_template,pdf))
                     os.rename(files,one_thousand_format)
             elif number == 2000:
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     two_thousand_template = "20YYMMDD-20XX"
                     pdf = ".pdf"
-                    two_thousand_format = ('{}{}'.format(two_thousand_template,pdf))
+                    two_thousand_format = ('{} {}{}'.format(prefix_num,two_thousand_template,pdf))
                     os.rename(files, two_thousand_format)
             elif number == 6000:
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     six_thousand_template = "20YYMMDD-60XX"
                     pdf = ".pdf"
-                    six_thousand_format = ('{}{}'.format(six_thousand_template,pdf))
+                    six_thousand_format = ('{} {}{}'.format(prefix_num,six_thousand_template,pdf))
                     os.rename(files,six_thousand_format)
             elif number == 9000:
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     nine_thousand_template = "20YYMMDD-90XX"
                     pdf = ".pdf"
-                    nine_thousand_format = ('{}{}'.format(nine_thousand_template,pdf))
+                    nine_thousand_format = ('{} {}{}'.format(prefix_num,nine_thousand_template,pdf))
                     os.rename(files, nine_thousand_format)
             else:
                 print("INVALID BATCH TYPE")
@@ -43,25 +47,27 @@ def bat_or_oth(kind):
             if type == "NDA":
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     nda_template = "20YYMMDD-10XX"
                     pdf = ".pdf"
-                    nda_format = ('{}{}'.format(nda_template,pdf))
+                    nda_format = ('{} {}{}'.format(prefix_num,nda_template,pdf))
                     os.rename(files, nda_format)
             elif type == "POUNDAGE REPORT":
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     poundage_input = (input("BATCH NUMBER"))
                     pdf = ".pdf"
-                    poundage_format = ('{}{}'.format(poundage_input,pdf))
+                    poundage_format = ('{} {}{}'.format(prefix_num,poundage_input,pdf))
                     os.rename(files, poundage_format)
             elif type == "POSTING REPORT":
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
+                    prefix_num = (files[:2])
                     month = ("MM")
                     day = ("DD")
                     year = (2018)
                     posting_message = "POSTING REPORT.pdf"
-                    prefix_num = (files[:2])
                     posting_format = ('{} {}-{}-{} {}'.format(prefix_num,month, day, year, posting_message))
                     os.rename(files, posting_format)
             else:
