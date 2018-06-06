@@ -1,5 +1,3 @@
-#SCANNER PDF RENAMER
-#===============================TYPE ALL INPUT IN CAPS============================================
 import os
 def bat_or_oth(kind):
 
@@ -10,7 +8,7 @@ def bat_or_oth(kind):
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    one_thousand_template = "20YYMMDD-10XX"
+                    one_thousand_template = "2018MMDD-10XX"
                     pdf = ".pdf"
                     one_thousand_format = ('{} {}{}'.format(prefix_num,one_thousand_template,pdf))
                     os.rename(files,one_thousand_format)
@@ -18,7 +16,7 @@ def bat_or_oth(kind):
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    two_thousand_template = "20YYMMDD-20XX"
+                    two_thousand_template = "2018MMDD-20XX"
                     pdf = ".pdf"
                     two_thousand_format = ('{} {}{}'.format(prefix_num,two_thousand_template,pdf))
                     os.rename(files, two_thousand_format)
@@ -26,7 +24,7 @@ def bat_or_oth(kind):
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    six_thousand_template = "20YYMMDD-60XX"
+                    six_thousand_template = "2018MMDD-60XX"
                     pdf = ".pdf"
                     six_thousand_format = ('{} {}{}'.format(prefix_num,six_thousand_template,pdf))
                     os.rename(files,six_thousand_format)
@@ -34,7 +32,7 @@ def bat_or_oth(kind):
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    nine_thousand_template = "20YYMMDD-90XX"
+                    nine_thousand_template = "2018MMDD-90XX"
                     pdf = ".pdf"
                     nine_thousand_format = ('{} {}{}'.format(prefix_num,nine_thousand_template,pdf))
                     os.rename(files, nine_thousand_format)
@@ -49,7 +47,7 @@ def bat_or_oth(kind):
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    nda_template = "NDA MM-DD-YYYY"
+                    nda_template = "NDA MM-DD-2018"
                     pdf = ".pdf"
                     nda_format = ('{} {}{}'.format(prefix_num,nda_template,pdf))
                     os.rename(files, nda_format)
