@@ -49,7 +49,7 @@ def bat_or_oth(kind):
                 os.chdir('/Users/hervinsagnep/Desktop/1')
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    nda_template = "20YYMMDD-10XX"
+                    nda_template = "NDA MM-DD-YYYY"
                     pdf = ".pdf"
                     nda_format = ('{} {}{}'.format(prefix_num,nda_template,pdf))
                     os.rename(files, nda_format)
@@ -126,6 +126,8 @@ for files in os.listdir():
 #MONTH INPUT * ISSUE
 
 month = input("Month")
+
+INPUT NEEDS TO BE PUT FOR ALL FUNCTIONS THAT HAVE MONTHS IN TEMPLATE
 
 1. USER INPUT FOR MONTH WILL ASK FOR INPUT OF EACH INDIVIDUAL FILE, NEED INPUT TO FORMAT WITH THE SINGLE INPUT INTEGER
 
