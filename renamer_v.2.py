@@ -93,7 +93,8 @@ PREFIX SCRIPT:
 import os
 os.chdir('/Users/hervinsagnep/Desktop/1')
 for files in os.listdir():
-    prefix_num = (files[:2])
+    prefix_num = (files[:2]) <--------- Variable in "for" loops
+    
     
 PREFIX REMOVAL SCRIPT:
 #REMOVE PREFIX
@@ -101,6 +102,7 @@ PREFIX REMOVAL SCRIPT:
 import os
 os.chdir('/Users/hervinsagnep/Desktop/1')
 for files in os.listdir():
-    prefix_rem(files[3:])
+    prefix_rem = (files[3:])
+    os.rename(files,prefix_rem)
 
 """
