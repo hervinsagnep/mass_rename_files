@@ -1,4 +1,5 @@
 #SCANNER PDF RENAMER
+#===============================TYPE ALL INPUT IN CAPS============================================
 import os
 def bat_or_oth(kind):
 
