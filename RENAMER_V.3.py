@@ -85,13 +85,21 @@ def bat_or_oth(kind):
             else:
                 print("INVALID TYPE")
         other_type(input("OTHER TYPE: NDA, POUNDAGE REPORT, POSTING REPORT"))
+
+    elif kind == "REFORMAT":
+        os.chdir('/Users/hervinsagnep/Desktop/1')
+        for files in os.listdir():
+            prefix_rem = (files[3:])
+            os.rename(files, prefix_rem)
     else:
         print ("PLEASE INPUT VALID KIND")
-bat_or_oth(input("BATCH OR OTHER?"))
+bat_or_oth(input("BATCH,OTHER,REFORMAT?"))
 
 
 """
 year = (int(input("YEAR")))
 month = (int(input("MONTH")))
+
+ADD PADDING TO MONTH (2,0) FORMATTING?
 
 """
