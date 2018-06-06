@@ -51,7 +51,8 @@ def bat_or_oth(kind):
                     day = ("DD")
                     year = (2018)
                     posting_message = "POSTING REPORT"
-                    posting_format = ('{}-{}-{} {}'.format(month, day, year, posting_message))
+                    prefix_num = (files[:2])
+                    posting_format = ('{} {}-{}-{} {}'.format(prefix_num,month, day, year, posting_message))
                     os.rename(files, posting_format)
             else:
                 print("INVALID TYPE")
@@ -86,5 +87,20 @@ THE PREFIX DIGITS MUST BE REMOVED MANUALLY
 LIST OF NUMBERS:
 
 [0:101] 
+
+PREFIX SCRIPT:
+
+import os
+os.chdir('/Users/hervinsagnep/Desktop/1')
+for files in os.listdir():
+    prefix_num = (files[:2])
+    
+PREFIX REMOVAL SCRIPT:
+#REMOVE PREFIX
+    
+import os
+os.chdir('/Users/hervinsagnep/Desktop/1')
+for files in os.listdir():
+    prefix_rem(files[3:])
 
 """
