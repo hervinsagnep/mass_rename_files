@@ -112,7 +112,7 @@ os.chdir('/Users/hervinsagnep/Desktop/1')
 for files in os.listdir():
     prefix_num = (files[:2]) <--------- Variable in "for" loops, 
     WHEN FILES ARE SCANNED THEY ARE GIVEN RANDOM NAMES MAY
-    HAVE TO SPLICE IN MIDDLE TO ENSURE TOTALLY RANDOM PREFIX
+    HAVE TO SPLICE MORE DIGITS TO ENSURE TOTALLY RANDOM PREFIX AND MAINTATIN ORDER OF FILES
        
 PREFIX REMOVAL SCRIPT:
 #REMOVE PREFIX
