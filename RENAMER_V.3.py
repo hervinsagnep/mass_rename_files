@@ -32,7 +32,7 @@ def bat_or_oth(kind):
                 month = ((input("MONTH")))
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    six_thousand_template = "MMDD-60XX"
+                    six_thousand_template = "DD-60XX"
                     pdf = ".pdf"
                     six_thousand_format = ('{} {}{}{}{}'.format(prefix_num,year,month,six_thousand_template,pdf))
                     os.rename(files,six_thousand_format)
@@ -42,7 +42,7 @@ def bat_or_oth(kind):
                 month = ((input("MONTH")))
                 for files in os.listdir():
                     prefix_num = (files[:2])
-                    nine_thousand_template = "MMDD-90XX"
+                    nine_thousand_template = "DD-90XX"
                     pdf = ".pdf"
                     nine_thousand_format = ('{} {}{}{}{}'.format(prefix_num,year,month,nine_thousand_template,pdf))
                     os.rename(files, nine_thousand_format)
