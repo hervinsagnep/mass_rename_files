@@ -2,6 +2,10 @@ import os
 from tkinter import *
 
 root = Tk()
+#STATUS BAR
+status = Label(root,text="HERVIN SAGNEP: PDF SCANNER RENAME APP PROJECT JUNE 6, 2018",fg='grey')
+status.grid(row=5,column= 5)
+
 #=============LABELS====================================
 #BATCHES LABELS
 batches_label = Label(root,text="BATCHES")
@@ -118,7 +122,7 @@ def reformat():
     for files in os.listdir():
         prefix_rem = (files[3:])
         os.rename(files, prefix_rem)
-button_reformat = Button(root,text="1000",command=reformat)
+button_reformat = Button(root,text="REFORMAT",command=reformat)
 button_reformat.grid(row=1,column=2)
 
 #===================================================================================================
