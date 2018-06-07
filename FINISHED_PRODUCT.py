@@ -3,7 +3,7 @@ from tkinter import *
 
 root = Tk()
 #STATUS BAR
-status = Label(root,text="HERVIN SAGNEP: PDF SCANNER RENAME APP PROJECT JUNE 6, 2018",fg='grey')
+status = Label(root,text="PDF SCANNER RENAME APP PROJECT JUNE 6, 2018",fg='grey')
 status.grid(row=5,column= 5)
 
 #=============LABELS====================================
