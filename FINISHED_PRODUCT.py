@@ -43,7 +43,7 @@ def batch_1000():
     year = s.year
     month = s.month
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         one_thousand_template = "DD-10XX"
         pdf = ".pdf"
         one_thousand_format = ('{} {}{}{}{}'.format(prefix_num, year, month, one_thousand_template, pdf))
@@ -56,7 +56,7 @@ def batch_2000():
     year = s.year
     month = s.month
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         two_thousand_template = "DD-20XX"
         pdf = ".pdf"
         two_thousand_format = ('{} {}{}{}{}'.format(prefix_num, year, month, two_thousand_template, pdf))
@@ -69,7 +69,7 @@ def batch_6000():
     year = s.year
     month = s.month
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         six_thousand_template = "MMDD-60XX"
         pdf = ".pdf"
         six_thousand_format = ('{} {}{}{}{}'.format(prefix_num, year, month, six_thousand_template, pdf))
@@ -82,7 +82,7 @@ def batch_9000():
     year = s.year
     month = s.month
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         nine_thousand_template = "MMDD-90XX"
         pdf = ".pdf"
         nine_thousand_format = ('{} {}{}{}{}'.format(prefix_num, year, month, nine_thousand_template, pdf))
@@ -97,7 +97,7 @@ def nda():
     year = s.year
     month = s.month
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         nda = "NDA"
         nda_template = "DD"
         pdf = ".pdf"
@@ -111,7 +111,7 @@ def posting_report():
     year = s.year
     month = s.month
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         day = ("DD")
         posting_message = "POSTING REPORT.pdf"
         posting_format = ('{} {}-{}-{} {}'.format(prefix_num, month, day, year, posting_message))
@@ -122,7 +122,7 @@ button_posting_report.grid(row=5,column=1)
 def poundage_report():
     os.chdir(s.directory)
     for files in os.listdir():
-        prefix_num = (files[:2])
+        prefix_num = (files[3:9])
         poundage_input = (input("BATCH NUMBER"))
         pdf = ".pdf"
         poundage_format = ('{} {}{}'.format(prefix_num, poundage_input, pdf))
@@ -135,7 +135,7 @@ button_poundage_report.grid(row=6,column=1)
 def reformat():
     os.chdir(s.directory)
     for files in os.listdir():
-        prefix_rem = (files[3:])
+        prefix_rem = (files[7:])
         os.rename(files, prefix_rem)
 button_reformat = Button(root,text="REFORMAT",command=reformat)
 button_reformat.grid(row=4,column=2)
