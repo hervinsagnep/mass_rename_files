@@ -1,7 +1,6 @@
 import os
+from tkinter import filedialog
 from tkinter import *
-from tkFileDialog import askdirectory
-
 
 class State:
     def __init__(self):
@@ -102,7 +101,7 @@ def nda():
         nda = "NDA"
         nda_template = "DD"
         pdf = ".pdf"
-        nda_format = ('{} {} {}-{}-{}'.format(prefix_num, nda, month, nda_template, year, pdf))
+        nda_format = ('{} {} {}-{}-{}{}'.format(prefix_num, nda, month, nda_template, year, pdf))
         os.rename(files, nda_format)
 button_NDA = Button(root,text="NDA",command=nda)
 button_NDA.grid(row=4,column=1)
@@ -160,7 +159,7 @@ var_dir.set("Directory: " + s.directory)
 label_dir.grid(row=0,column=2)
 
 def choose_file(var):
-    s.setDir(askdirectory(title = "Choose a directory", mustexist = True))
+    s.setDir(filedialog.askdirectory(title = "Choose a directory", mustexist = True))
     var_dir.set("Directory: " + s.directory)
 button_browse = Button(root,text="CHOOSE DIRECTORY",command=lambda: choose_file(var_dir))
 button_browse.grid(row=0,column=1)
