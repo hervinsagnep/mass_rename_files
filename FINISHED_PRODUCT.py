@@ -156,35 +156,35 @@ label_month.grid(row=1,column=2)
 var_dir = StringVar()
 label_dir = Label(root, textvariable=var_dir)
 var_dir.set("Directory: " + s.directory)
-label_dir.grid(row=0,column=2)
+label_dir.grid(row=0,column=1)
 
 def choose_file(var):
     s.setDir(filedialog.askdirectory(title = "Choose a directory", mustexist = True))
     var_dir.set("Directory: " + s.directory)
 button_browse = Button(root,text="CHOOSE DIRECTORY",command=lambda: choose_file(var_dir))
-button_browse.grid(row=0,column=1)
+button_browse.grid(row=0,column=0)
 
 
 
 entry_month=Entry(root,bd=4)
 entry_month.insert(0, s.month)
-entry_month.grid(row=1,column=0)
+entry_month.grid(row=1,column=1)
 
 def set_month(month, var):
     s.setMonth(month)
     var.set("Month: " + s.month)
 button_month = Button(root,text="SET MONTH",command=lambda: set_month(entry_month.get(), var_month))	
-button_month.grid(row=1,column=1)
+button_month.grid(row=1,column=0)
 
 entry_year=Entry(root,bd=4)
 entry_year.insert(0, s.year)
-entry_year.grid(row=2,column=0)
+entry_year.grid(row=2,column=1)
 
 def set_year(year, var):
     s.setYear(year)
     var.set("Year: " + s.year)
 button_year = Button(root,text="SET YEAR",command=lambda: set_year(entry_year.get(), var_year))
-button_year.grid(row=2,column=1)
+button_year.grid(row=2,column=0)
 
 #===================================================================================================
 root.mainloop()
