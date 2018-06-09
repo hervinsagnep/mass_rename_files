@@ -18,13 +18,14 @@ class State:
         self.month = month
 
 root = Tk()
-root.wm_title("File Rename Program by Hervin Sagnep")
+root.wm_title("File Rename Program | Hervin Sagnep 2018")
 #STATE
 s = State()
 #STATUS BAR
+"""
 status = Label(root,text="PDF SCANNER RENAME APP PROJECT JUNE 6, 2018 | HERVIN SAGNEP",fg='grey')
 status.grid(row=9,column=5)
-
+"""
 #=============LABELS====================================
 #BATCHES LABELS
 batches_label = Label(root,text="BATCHES:")
@@ -33,19 +34,19 @@ batches_label.grid(row=4,column=0)
 other_label = Label(root,text="OTHER:")
 other_label.grid(row=4,column=1)
 #DEVELOPMENT LABEL
-"""
+
 merge_label = Label(root,text="DEVELOPMENT:")
-merge_label.grid(row=3,column=2)
-"""
+merge_label.grid(row=4,column=2)
+
 
 #FORMAT LABELS
 reformat_label = Label(root,text="REFORMAT BATCHES/OTHER:")
 reformat_label.grid(row=0,column=5)
-"""
+
 #FORMAT DEVELOPMENT LABELS
 dev_label = Label(root, text="REFORMAT DEVELOPMENT FILES:")
 dev_label.grid(row=0,column=6)
-"""
+
 
 #CUSTOM ENTRY LABELS
 """
@@ -155,7 +156,7 @@ button_poundage_report.grid(row=7,column=1)
 #===================================================================================================
 #=====================MERGE BUTTONS==============================================
 #MERGE/DEVELOPMENT FUNCTION AND GRID
-"""
+
 def batch_1000_A():
     os.chdir(s.directory)
     year = s.year
@@ -172,8 +173,8 @@ def batch_1000_A():
         os.rename(files, one_thousand_format)
         i = i+1
 button_1000 = Button(root,text="1000",command=batch_1000_A)
-button_1000.grid(row=4,column=2)
-
+button_1000.grid(row=5,column=2)
+"""
 def batch_2000_A():
     os.chdir(s.directory)
     year = s.year
@@ -228,15 +229,15 @@ button_reformat.grid(row=1,column=5)
 
 #===================================================================================================
 #=============DEVELOPMENT REFORMAT:FUNCTIONS,BUTTON,LAYOUT================================================
-"""
+
 def dev_reformat():
     os.chdir(s.directory)
     for files in os.listdir():
-        prefix_rem = (files[3:])
+        prefix_rem = (files[4:])
         os.rename(files, prefix_rem)
-button_reformat = Button(root,text="REFORMAT",command=reformat,fg="red")
+button_reformat = Button(root,text="REFORMAT",command=dev_reformat,fg="red")
 button_reformat.grid(row=1,column=6)
-"""
+
 #===================================================================================================
 #=============CHOOSE FILE================================================
 
@@ -298,4 +299,3 @@ custom_entry_button.grid(row=5,column=4)
 
 #===================================================================================================
 root.mainloop()
-
