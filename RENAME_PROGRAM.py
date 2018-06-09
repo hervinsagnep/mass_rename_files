@@ -23,7 +23,7 @@ root.wm_title("File Rename Program by Hervin Sagnep")
 s = State()
 #STATUS BAR
 status = Label(root,text="PDF SCANNER RENAME APP PROJECT JUNE 6, 2018 | HERVIN SAGNEP",fg='grey')
-status.grid(row=8,column= 5)
+status.grid(row=9,column=5)
 
 #=============LABELS====================================
 #BATCHES LABELS
@@ -32,7 +32,7 @@ batches_label.grid(row=4,column=0)
 #OTHER LABELS
 other_label = Label(root,text="OTHER:")
 other_label.grid(row=4,column=1)
-#MERGE LABEL
+#DEVELOPMENT LABEL
 """
 merge_label = Label(root,text="DEVELOPMENT:")
 merge_label.grid(row=3,column=2)
@@ -45,7 +45,12 @@ reformat_label.grid(row=0,column=5)
 #FORMAT DEVELOPMENT LABELS
 dev_label = Label(root, text="REFORMAT DEVELOPMENT FILES:")
 dev_label.grid(row=0,column=6)
+"""
 
+#CUSTOM ENTRY LABELS
+"""
+cus_label = Label(root, text="CUSTOM ENTRY:")
+cus_label.grid(row=4,column=4)
 """
 #==========================================================================================
     
@@ -155,13 +160,17 @@ def batch_1000_A():
     os.chdir(s.directory)
     year = s.year
     month = s.month
+    i = 0
     for files in os.listdir():
-        prefix_num = (files[3:9])
-        one_thousand_template = "DD-10XX"
+        dev_pre = i+1
+        prefix_num = ('{0:03d}').format(dev_pre)
+        one_thousand_template = input("DD")
+        batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        suffix = "A"
-        one_thousand_format = ('{} {}{}{} {}{}'.format(prefix_num, year, month, one_thousand_template,suffix, pdf))
+        suffix = "D"
+        one_thousand_format = ('{} {}{}{}-10{} {}{}'.format(prefix_num, year, month, one_thousand_template,batch_digits,suffix, pdf))
         os.rename(files, one_thousand_format)
+        i = i+1
 button_1000 = Button(root,text="1000",command=batch_1000_A)
 button_1000.grid(row=4,column=2)
 
@@ -223,7 +232,7 @@ button_reformat.grid(row=1,column=5)
 def dev_reformat():
     os.chdir(s.directory)
     for files in os.listdir():
-        prefix_rem = (files[7:])
+        prefix_rem = (files[3:])
         os.rename(files, prefix_rem)
 button_reformat = Button(root,text="REFORMAT",command=reformat,fg="red")
 button_reformat.grid(row=1,column=6)
@@ -271,6 +280,22 @@ def set_year(year, var):
     var.set("Year: " + s.year)
 button_year = Button(root,text="SET YEAR",command=lambda: set_year(entry_year.get(), var_year))
 button_year.grid(row=2,column=0)
+#============================CUSTOM ENTRY BUTTON AND LABEL=====================================================
+"""
+def custom_entry():
+    os.chdir(s.directory)
+    for files in os.listdir():
+        prefix_num = (files[3:9])
+        enter_name = (input("ENTER CUSTOM BATCH NUMBER"))
+        pdf = ".pdf"
+        poundage_format = ('{} {}{}'.format(prefix_num, enter_name, pdf))
+        os.rename(files, poundage_format)
+custom_entry_button = Button(root,text="CUSTOM ENTRY",command=custom_entry)
+custom_entry_button.grid(row=5,column=4)
+"""
+#=============================================================================================================
+
 
 #===================================================================================================
 root.mainloop()
+
