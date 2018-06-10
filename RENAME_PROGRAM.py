@@ -1,7 +1,7 @@
 import os
 from tkinter import filedialog
 from tkinter import *
-
+#HI
 class State:
     def __init__(self):
         self.month = "0"
@@ -35,9 +35,8 @@ other_label = Label(root,text="OTHER:")
 other_label.grid(row=4,column=1)
 #DEVELOPMENT LABEL
 
-merge_label = Label(root,text="DEVELOPMENT:")
-merge_label.grid(row=4,column=2)
-
+merge_label = Label(root,text="DEVELOPMENT FILE BATCHES:")
+merge_label.grid(row=4,column=3)
 
 #FORMAT LABELS
 reformat_label = Label(root,text="REFORMAT BATCHES/OTHER:")
@@ -49,10 +48,10 @@ dev_label.grid(row=0,column=6)
 
 
 #CUSTOM ENTRY LABELS
-"""
+
 cus_label = Label(root, text="CUSTOM ENTRY:")
-cus_label.grid(row=4,column=4)
-"""
+cus_label.grid(row=4,column=5)
+
 #==========================================================================================
     
 #=============BATCH:FUNCTIONS,BUTTON,LAYOUT================================================
@@ -173,50 +172,62 @@ def batch_1000_A():
         os.rename(files, one_thousand_format)
         i = i+1
 button_1000 = Button(root,text="1000",command=batch_1000_A)
-button_1000.grid(row=5,column=2)
-"""
+button_1000.grid(row=5,column=3)
+
 def batch_2000_A():
     os.chdir(s.directory)
     year = s.year
     month = s.month
+    i = 0
     for files in os.listdir():
-        prefix_num = (files[3:9])
-        two_thousand_template = "DD-20XX"
+        dev_pre = i + 1
+        prefix_num = ('{0:03d}').format(dev_pre)
+        two_thousand_template = input("DD")
+        batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        suffix = "A"
-        two_thousand_format = ('{} {}{}{} {}{}'.format(prefix_num, year, month, two_thousand_template,suffix,pdf))
+        suffix = "D"
+        two_thousand_format = ('{} {}{}{}-20{} {}{}'.format(prefix_num, year, month,two_thousand_template,batch_digits,suffix,pdf))
         os.rename(files, two_thousand_format)
+        i = i + 1
 button_2000 = Button(root,text="2000",command=batch_2000_A)
-button_2000.grid(row=5,column=2)
+button_2000.grid(row=6,column=3)
 
 def batch_6000_A():
     os.chdir(s.directory)
     year = s.year
     month = s.month
+    i = 0
     for files in os.listdir():
-        prefix_num = (files[3:9])
-        six_thousand_template = "DD-60XX"
+        dev_pre = i + 1
+        prefix_num = ('{0:03d}').format(dev_pre)
+        six_thousand_template = input("DD")
+        batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        suffix = "A"
-        six_thousand_format = ('{} {}{}{} {}{}'.format(prefix_num, year, month, six_thousand_template,suffix,pdf))
+        suffix = "D"
+        six_thousand_format = ('{} {}{}{}-60{} {}{}'.format(prefix_num, year, month, six_thousand_template,batch_digits,suffix,pdf))
+        i = i + 1
         os.rename(files, six_thousand_format)
 button_6000 = Button(root,text="6000",command=batch_6000_A)
-button_6000.grid(row=6,column=2)
+button_6000.grid(row=7,column=3)
 
 def batch_9000_A():
     os.chdir(s.directory)
     year = s.year
     month = s.month
+    i = 0
     for files in os.listdir():
-        prefix_num = (files[3:9])
-        nine_thousand_template = "DD-90XX"
+        dev_pre = i + 1
+        prefix_num = ('{0:03d}').format(dev_pre)
+        nine_thousand_template = input("DD")
+        batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        suffix = "A"
-        nine_thousand_format = ('{} {}{}{} {}{}'.format(prefix_num, year, month, nine_thousand_template,suffix, pdf))
+        suffix = "D"
+        nine_thousand_format = ('{} {}{}{}-90{} {}{}'.format(prefix_num, year, month, nine_thousand_template,batch_digits,suffix, pdf))
+        i = i + 1
         os.rename(files, nine_thousand_format)
 button_9000 = Button(root,text="9000",command=batch_9000_A)
-button_9000.grid(row=7,column=2)
-"""
+button_9000.grid(row=8,column=3)
+
 #================================================================================
 #=============REFORMAT:FUNCTIONS,BUTTON,LAYOUT================================================
 def reformat():
@@ -282,7 +293,7 @@ def set_year(year, var):
 button_year = Button(root,text="SET YEAR",command=lambda: set_year(entry_year.get(), var_year))
 button_year.grid(row=2,column=0)
 #============================CUSTOM ENTRY BUTTON AND LABEL=====================================================
-"""
+
 def custom_entry():
     os.chdir(s.directory)
     for files in os.listdir():
@@ -292,10 +303,28 @@ def custom_entry():
         poundage_format = ('{} {}{}'.format(prefix_num, enter_name, pdf))
         os.rename(files, poundage_format)
 custom_entry_button = Button(root,text="CUSTOM ENTRY",command=custom_entry)
-custom_entry_button.grid(row=5,column=4)
-"""
+custom_entry_button.grid(row=5,column=5)
+
 #=============================================================================================================
 
 
 #===================================================================================================
 root.mainloop()
+
+
+"""
+ENSURE PROPER SCANNING OF FILES AND THAT THE SCANNED FILES ARE ALL IN THE SAME BATCH NUMBER TYPE, MISTAKES MAY ARISE WHERE THERE CAN BE A DOUBLE SCAN AND RENAMING WILL BECOME COMPLICATED
+OR WILL CAUSE THE DELETION OF THE FILE IF IT IS RENAMED
+"""
+
+"""
+THINGS TO ADD/FIX:
+-ADD: CUSTOM ENTRY BUTTON: FIGURE OUT GRID LOCATION
+-FIX: ELIMINATE THE NEED FOR THE NEED OF SPLICING REGULAR BATCH NUMBERS, IMPLEMENT THE BETTER
+ORDERING SYSTEM SYNTAX. LOOK AT MERGE.
+-FIX: FORMAT OF BUTTONS
+-FIX: WHEN NEW NUMBERING SYSTEM FOR REGULAR BATCH NUMBERS IS IMPLEMENTED, ABLE TO HAVE SINGLE
+FORMAT BUTTON INSTEAD OF 2
+
+"""
+
