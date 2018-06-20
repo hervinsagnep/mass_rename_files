@@ -68,7 +68,7 @@ def batch_1000():
         one_thousand_template = input("DD")
         batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        one_thousand_format = ('{} {}{}{}-10{}{}'.format(prefix_num, year, month, one_thousand_template, batch_digits, pdf))
+        one_thousand_format = ('{} {}{}{}-1{}{}'.format(prefix_num, year, month, one_thousand_template, batch_digits, pdf))
         os.rename(files, one_thousand_format)
         i = i + 1
 button_1000 = Button(root,text="1000",command=batch_1000)
@@ -85,7 +85,7 @@ def batch_2000():
         two_thousand_template = input("DD")
         batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        two_thousand_format = ('{} {}{}{}-20{}{}'.format(prefix_num, year, month, two_thousand_template,batch_digits, pdf))
+        two_thousand_format = ('{} {}{}{}-2{}{}'.format(prefix_num, year, month, two_thousand_template,batch_digits, pdf))
         os.rename(files, two_thousand_format)
         i = i + 1
 button_2000 = Button(root,text="2000",command=batch_2000)
@@ -102,7 +102,7 @@ def batch_6000():
         six_thousand_template = input("DD")
         batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        six_thousand_format = ('{} {}{}{}-60{}{}'.format(prefix_num, year, month, six_thousand_template,batch_digits, pdf))
+        six_thousand_format = ('{} {}{}{}-6{}{}'.format(prefix_num, year, month, six_thousand_template,batch_digits, pdf))
         os.rename(files, six_thousand_format)
         i = i + 1
 button_6000 = Button(root,text="6000",command=batch_6000)
@@ -119,7 +119,7 @@ def batch_9000():
         nine_thousand_template = input("DD")
         batch_digits = input("BATCH DIGITS")
         pdf = ".pdf"
-        nine_thousand_format = ('{} {}{}{}-90{}{}'.format(prefix_num, year, month, nine_thousand_template,batch_digits, pdf))
+        nine_thousand_format = ('{} {}{}{}-9{}{}'.format(prefix_num, year, month, nine_thousand_template,batch_digits, pdf))
         os.rename(files, nine_thousand_format)
         i = i + 1
 button_9000 = Button(root,text="9000",command=batch_9000)
@@ -186,11 +186,11 @@ def batch_1000_A():
     for files in os.listdir():
         dev_pre = i+1
         prefix_num = ('{0:03d}').format(dev_pre)
-        one_thousand_template = input("DD")
-        batch_digits = input("BATCH DIGITS")
+        one_thousand_template = ("DD")
+        batch_digits = ("xxx")
         pdf = ".pdf"
         suffix = "D"
-        one_thousand_format = ('{} {}{}{}-10{} {}{}'.format(prefix_num, year, month, one_thousand_template,batch_digits,suffix, pdf))
+        one_thousand_format = ('{} {}{}{}-1{} {}{}'.format(prefix_num, year, month, one_thousand_template,batch_digits,suffix, pdf))
         os.rename(files, one_thousand_format)
         i = i+1
 button_1000 = Button(root,text="1000",command=batch_1000_A)
@@ -204,11 +204,11 @@ def batch_2000_A():
     for files in os.listdir():
         dev_pre = i + 1
         prefix_num = ('{0:03d}').format(dev_pre)
-        two_thousand_template = input("DD")
-        batch_digits = input("BATCH DIGITS")
+        two_thousand_template = ("DD")
+        batch_digits = ("xxx")
         pdf = ".pdf"
         suffix = "D"
-        two_thousand_format = ('{} {}{}{}-20{} {}{}'.format(prefix_num, year, month,two_thousand_template,batch_digits,suffix,pdf))
+        two_thousand_format = ('{} {}{}{}-2{} {}{}'.format(prefix_num, year, month,two_thousand_template,batch_digits,suffix,pdf))
         os.rename(files, two_thousand_format)
         i = i + 1
 button_2000 = Button(root,text="2000",command=batch_2000_A)
@@ -222,11 +222,11 @@ def batch_6000_A():
     for files in os.listdir():
         dev_pre = i + 1
         prefix_num = ('{0:03d}').format(dev_pre)
-        six_thousand_template = input("DD")
-        batch_digits = input("BATCH DIGITS")
+        six_thousand_template = ("DD")
+        batch_digits = ("xxx")
         pdf = ".pdf"
         suffix = "D"
-        six_thousand_format = ('{} {}{}{}-60{} {}{}'.format(prefix_num, year, month, six_thousand_template,batch_digits,suffix,pdf))
+        six_thousand_format = ('{} {}{}{}-6{} {}{}'.format(prefix_num, year, month, six_thousand_template,batch_digits,suffix,pdf))
         i = i + 1
         os.rename(files, six_thousand_format)
 button_6000 = Button(root,text="6000",command=batch_6000_A)
@@ -240,11 +240,11 @@ def batch_9000_A():
     for files in os.listdir():
         dev_pre = i + 1
         prefix_num = ('{0:03d}').format(dev_pre)
-        nine_thousand_template = input("DD")
-        batch_digits = input("BATCH DIGITS")
+        nine_thousand_template = ("DD")
+        batch_digits = ("xxx")
         pdf = ".pdf"
         suffix = "D"
-        nine_thousand_format = ('{} {}{}{}-90{} {}{}'.format(prefix_num, year, month, nine_thousand_template,batch_digits,suffix, pdf))
+        nine_thousand_format = ('{} {}{}{}-9{} {}{}'.format(prefix_num, year, month, nine_thousand_template,batch_digits,suffix, pdf))
         i = i + 1
         os.rename(files, nine_thousand_format)
 button_9000 = Button(root,text="9000",command=batch_9000_A)
@@ -358,5 +358,8 @@ BUTTON
 WHEN PRESSED RUN MESSAGE BOX
 IF MESSAGE BOX == "YES" EXECUTE FORMAT
 IF MESSAGE BOX == "NO" EXIT
+
+DEVELOPMENT FILES NOTES:
+DEVELOPMENT FILES ARE RANDOM, IMPLEMENT NAMING TEMPLATE FROM DEVELOPMENT TO MAKE FINANCE JOB A LOT EASIER
 
 """
