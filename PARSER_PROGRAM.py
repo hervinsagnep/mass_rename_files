@@ -30,16 +30,15 @@ newlist = []
 def dev_reformat():
     os.chdir(s.directory)
     for f in os.listdir():
-        l.append(f[9:13])
-        l.sort()
+        print(f[9:13])
+
     #beg_range = int(input("BEG BATCH RANGE"))
     #end_range = int(input("END BATCH RANGE")) + 1
     #for x in range(beg_range, end_range):
         #newlist.append(list(range(beg_range, end_range)))
     #for i in newlist[0]:
         #print(i)
-    for i in l:
-        print(i)
+
 
 button_reformat = Button(root,text="PARSE BATCHES",command=dev_reformat,fg="red")
 button_reformat.grid(row=2,column=0)
@@ -65,9 +64,7 @@ def dev_reformat_2():
     beg_range = int(input("BEG BATCH RANGE"))
     end_range = int(input("END BATCH RANGE")) + 1
     for x in range(beg_range, end_range):
-        newlist.append(list(range(beg_range, end_range)))
-    for i in newlist[0]:
-        print(i)
+        print(x)
 button_reformat = Button(root,text="BATCH RANGE",command=dev_reformat_2,fg="red")
 button_reformat.grid(row=1,column=0)
 
@@ -86,4 +83,3 @@ button_browse = Button(root,text="CHOOSE DIRECTORY",command=lambda: choose_file(
 button_browse.grid(row=0,column=0)
 
 root.mainloop()
-

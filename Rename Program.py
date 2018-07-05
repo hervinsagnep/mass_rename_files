@@ -34,9 +34,10 @@ batches_label.grid(row=4,column=0)
 other_label = Label(root,text="OTHER:")
 other_label.grid(row=4,column=1)
 #DEVELOPMENT LABEL
-
+"""
 merge_label = Label(root,text="DEVELOPMENT FILES:")
 merge_label.grid(row=4,column=3)
+"""
 
 """
 #FORMAT LABELS
@@ -162,13 +163,15 @@ button_posting_report.grid(row=6,column=1)
 
 def poundage_report():
     os.chdir(s.directory)
+    year = s.year
+    month = s.month
     i = 0
     for files in os.listdir():
         dev_pre = i + 1
         prefix_num = ('{0:03d}').format(dev_pre)
         poundage_input = (input("BATCH NUMBER"))
         pdf = ".pdf"
-        poundage_format = ('{} {}{}'.format(prefix_num, poundage_input, pdf))
+        poundage_format = ('{} {}{}{}{}'.format(prefix_num,year,month,poundage_input, pdf))
         os.rename(files, poundage_format)
         i = i + 1
 button_poundage_report = Button(root,text="POUNDAGE REPORT",command=poundage_report)
@@ -177,7 +180,7 @@ button_poundage_report.grid(row=7,column=1)
 #===================================================================================================
 #=====================MERGE BUTTONS==============================================
 #MERGE/DEVELOPMENT FUNCTION AND GRID
-
+"""
 def batch_1000_A():
     os.chdir(s.directory)
     year = s.year
@@ -249,6 +252,7 @@ def batch_9000_A():
         os.rename(files, nine_thousand_format)
 button_9000 = Button(root,text="9000",command=batch_9000_A)
 button_9000.grid(row=8,column=3)
+"""
 
 #================================================================================
 #=============REFORMAT:FUNCTIONS,BUTTON,LAYOUT================================================
@@ -350,16 +354,11 @@ ORDERING SYSTEM SYNTAX. LOOK AT MERGE.
 -FIX: FORMAT OF BUTTONS
 -FIX: WHEN NEW NUMBERING SYSTEM FOR REGULAR BATCH NUMBERS IS IMPLEMENTED, ABLE TO HAVE SINGLE
 FORMAT BUTTON INSTEAD OF 2
-
-
 FORMAT BUTTON:
-
 BUTTON
 WHEN PRESSED RUN MESSAGE BOX
 IF MESSAGE BOX == "YES" EXECUTE FORMAT
 IF MESSAGE BOX == "NO" EXIT
-
 DEVELOPMENT FILES NOTES:
 DEVELOPMENT FILES ARE RANDOM, IMPLEMENT NAMING TEMPLATE FROM DEVELOPMENT TO MAKE FINANCE JOB A LOT EASIER
-
 """
