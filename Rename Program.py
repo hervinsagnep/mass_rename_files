@@ -171,7 +171,7 @@ def poundage_report():
         prefix_num = ('{0:03d}').format(dev_pre)
         poundage_input = (input("BATCH NUMBER"))
         pdf = ".pdf"
-        poundage_format = ('{} {}{}{}{}'.format(prefix_num,year,month,poundage_input, pdf))
+        poundage_format = ('{} {}{}{}'.format(prefix_num,year,poundage_input, pdf))
         os.rename(files, poundage_format)
         i = i + 1
 button_poundage_report = Button(root,text="POUNDAGE REPORT",command=poundage_report)
