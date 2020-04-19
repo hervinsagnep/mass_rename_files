@@ -177,95 +177,6 @@ def poundage_report():
 button_poundage_report = Button(root,text="POUNDAGE REPORT",command=poundage_report)
 button_poundage_report.grid(row=7,column=1)
 
-#===================================================================================================
-#=====================MERGE BUTTONS==============================================
-#MERGE/DEVELOPMENT FUNCTION AND GRID
-"""
-def batch_1000_A():
-    os.chdir(s.directory)
-    year = s.year
-    month = s.month
-    i = 0
-    for files in os.listdir():
-        dev_pre = i+1
-        prefix_num = ('{0:03d}').format(dev_pre)
-        one_thousand_template = ("DD")
-        batch_digits = ("xxx")
-        pdf = ".pdf"
-        suffix = "D"
-        one_thousand_format = ('{} {}{}{}-1{} {}{}'.format(prefix_num, year, month, one_thousand_template,batch_digits,suffix, pdf))
-        os.rename(files, one_thousand_format)
-        i = i+1
-button_1000 = Button(root,text="1000",command=batch_1000_A)
-button_1000.grid(row=5,column=3)
-
-def batch_2000_A():
-    os.chdir(s.directory)
-    year = s.year
-    month = s.month
-    i = 0
-    for files in os.listdir():
-        dev_pre = i + 1
-        prefix_num = ('{0:03d}').format(dev_pre)
-        two_thousand_template = ("DD")
-        batch_digits = ("xxx")
-        pdf = ".pdf"
-        suffix = "D"
-        two_thousand_format = ('{} {}{}{}-2{} {}{}'.format(prefix_num, year, month,two_thousand_template,batch_digits,suffix,pdf))
-        os.rename(files, two_thousand_format)
-        i = i + 1
-button_2000 = Button(root,text="2000",command=batch_2000_A)
-button_2000.grid(row=6,column=3)
-
-def batch_6000_A():
-    os.chdir(s.directory)
-    year = s.year
-    month = s.month
-    i = 0
-    for files in os.listdir():
-        dev_pre = i + 1
-        prefix_num = ('{0:03d}').format(dev_pre)
-        six_thousand_template = ("DD")
-        batch_digits = ("xxx")
-        pdf = ".pdf"
-        suffix = "D"
-        six_thousand_format = ('{} {}{}{}-6{} {}{}'.format(prefix_num, year, month, six_thousand_template,batch_digits,suffix,pdf))
-        i = i + 1
-        os.rename(files, six_thousand_format)
-button_6000 = Button(root,text="6000",command=batch_6000_A)
-button_6000.grid(row=7,column=3)
-
-def batch_9000_A():
-    os.chdir(s.directory)
-    year = s.year
-    month = s.month
-    i = 0
-    for files in os.listdir():
-        dev_pre = i + 1
-        prefix_num = ('{0:03d}').format(dev_pre)
-        nine_thousand_template = ("DD")
-        batch_digits = ("xxx")
-        pdf = ".pdf"
-        suffix = "D"
-        nine_thousand_format = ('{} {}{}{}-9{} {}{}'.format(prefix_num, year, month, nine_thousand_template,batch_digits,suffix, pdf))
-        i = i + 1
-        os.rename(files, nine_thousand_format)
-button_9000 = Button(root,text="9000",command=batch_9000_A)
-button_9000.grid(row=8,column=3)
-"""
-
-#================================================================================
-#=============REFORMAT:FUNCTIONS,BUTTON,LAYOUT================================================
-"""
-def reformat():
-    os.chdir(s.directory)
-    for files in os.listdir():
-        prefix_rem = (files[7:])
-        os.rename(files, prefix_rem)
-button_reformat = Button(root,text="REFORMAT",command=reformat,fg="red")
-button_reformat.grid(row=1,column=5)
-"""
-#===================================================================================================
 #=============DEVELOPMENT REFORMAT:FUNCTIONS,BUTTON,LAYOUT================================================
 def dev_reformat():
     os.chdir(s.directory)
@@ -275,7 +186,6 @@ def dev_reformat():
 button_reformat = Button(root,text="REFORMAT",command=dev_reformat,fg="red")
 button_reformat.grid(row=1,column=6)
 
-#===================================================================================================
 #=============CHOOSE FILE================================================
 
 var_year = StringVar()
@@ -340,25 +250,3 @@ custom_entry_button.grid(row=5,column=5)
 #===================================================================================================
 root.mainloop()
 
-
-"""
-ENSURE PROPER SCANNING OF FILES AND THAT THE SCANNED FILES ARE ALL IN THE SAME BATCH NUMBER TYPE, MISTAKES MAY ARISE WHERE THERE CAN BE A DOUBLE SCAN AND RENAMING WILL BECOME COMPLICATED
-OR WILL CAUSE THE DELETION OF THE FILE IF IT IS RENAMED
-"""
-
-"""
-THINGS TO ADD/FIX:
--ADD: CUSTOM ENTRY BUTTON: FIGURE OUT GRID LOCATION
--FIX: ELIMINATE THE NEED FOR THE NEED OF SPLICING REGULAR BATCH NUMBERS, IMPLEMENT THE BETTER
-ORDERING SYSTEM SYNTAX. LOOK AT MERGE.
--FIX: FORMAT OF BUTTONS
--FIX: WHEN NEW NUMBERING SYSTEM FOR REGULAR BATCH NUMBERS IS IMPLEMENTED, ABLE TO HAVE SINGLE
-FORMAT BUTTON INSTEAD OF 2
-FORMAT BUTTON:
-BUTTON
-WHEN PRESSED RUN MESSAGE BOX
-IF MESSAGE BOX == "YES" EXECUTE FORMAT
-IF MESSAGE BOX == "NO" EXIT
-DEVELOPMENT FILES NOTES:
-DEVELOPMENT FILES ARE RANDOM, IMPLEMENT NAMING TEMPLATE FROM DEVELOPMENT TO MAKE FINANCE JOB A LOT EASIER
-"""
